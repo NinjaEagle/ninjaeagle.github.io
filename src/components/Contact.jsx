@@ -1,5 +1,5 @@
 import { profile, social } from "../data/site.js";
-import { IconExternal } from "./Icons.jsx";
+import { IconExternal, IconMail } from "./Icons.jsx";
 import { useInView } from "../hooks/useInView.js";
 
 export default function Contact() {
@@ -15,7 +15,13 @@ export default function Contact() {
           for remote work.
         </p>
         <div className="hero-actions">
-          <a className="button button-primary" href={`mailto:${profile.email}`}>
+          <a
+            className="button button-primary"
+            href={`mailto:${profile.email}`}
+            aria-label={`Email ${profile.name} at ${profile.email} — opens your email app`}
+            title="Opens your email app"
+          >
+            <IconMail />
             {profile.email}
           </a>
           <a
@@ -27,6 +33,10 @@ export default function Contact() {
             Resume <IconExternal />
           </a>
         </div>
+        <p className="contact-hint">
+          <IconMail />
+          The envelope button opens your default email app with my address filled in.
+        </p>
         <ul className="social-list">
           {social.map((item) => (
             <li key={item.label}>

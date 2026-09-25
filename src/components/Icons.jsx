@@ -37,6 +37,31 @@ export function IconArrow() {
   );
 }
 
+export function IconMail() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="icon">
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="14"
+        rx="2.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <path
+        d="M4 8l7.4 5.2a1 1 0 0 0 1.2 0L20 8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function IconExternal() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="icon">

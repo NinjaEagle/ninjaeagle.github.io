@@ -397,6 +397,10 @@ p {
 .experience-card {
   padding: 1.6rem 1.8rem;
   border-left: 3px solid var(--accent);
+}
+
+/* Staggered entrance waits for the section to scroll into view. */
+.reveal.in .experience-card {
   animation: skill-in 0.5s ease both;
   animation-delay: calc(var(--i) * 90ms);
 }
@@ -504,6 +508,14 @@ p {
   max-width: 720px;
 }
 
+.contact-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+}
+
 .social-list {
   display: flex;
   flex-wrap: wrap;
@@ -527,7 +539,11 @@ p {
 
 .footer-resume:focus-visible,
 .button:focus-visible,
-.social-list a:focus-visible {
+.social-list a:focus-visible,
+.brand:focus-visible,
+.nav-toggle:focus-visible,
+.site-nav a:focus-visible,
+.project-links a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
@@ -605,7 +621,7 @@ p {
   }
 
   .skill-groups.is-entering .skill-pills li,
-  .experience-card {
+  .reveal.in .experience-card {
     animation: none;
   }
 

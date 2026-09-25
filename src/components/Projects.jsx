@@ -7,7 +7,7 @@ function ProjectCard({ project }) {
     <article className={project.featured ? "project-card featured" : "project-card"}>
       {project.img ? (
         <div className="project-media">
-          <img src={project.img} alt="" loading="lazy" />
+          <img src={project.img} alt="" loading="lazy" decoding="async" />
         </div>
       ) : (
         <div className="project-media placeholder" aria-hidden="true">

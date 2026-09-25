@@ -9,7 +9,12 @@ export default function About() {
     <section id="about" className="section" ref={ref}>
       <div className={visible ? "container split reveal in" : "container split reveal"}>
         <figure className="portrait">
-          <img src={portrait} alt={`${profile.name} portrait`} />
+          <img
+            src={portrait}
+            alt={`${profile.name} portrait`}
+            loading="lazy"
+            decoding="async"
+          />
         </figure>
         <div>
           <p className="eyebrow">About</p>
