@@ -1,6 +1,8 @@
-import hackernewsclone from "../assets/hackernewsclone.png";
-import rightshub from "../assets/rightshub.gif";
-import restroomfinder from "../assets/restroomfinder.gif";
+import hackernewsclone from "../assets/hackernewsclone.webp";
+import rightshubClip from "../assets/rightshub.mp4";
+import rightshubPoster from "../assets/rightshub-poster.webp";
+import restroomfinderClip from "../assets/restroomfinder.mp4";
+import restroomfinderPoster from "../assets/restroomfinder-poster.webp";
 
 export const profile = {
   name: "Kevin Wang",
@@ -151,7 +153,8 @@ export const projects = [
     name: "RightsHub",
     info: "Educates the public about incidents of death from police in their area through data visualizations, and about their rights.",
     technologies: ["React", "Node.js", "Leaflet", "HTML", "CSS", "Bootstrap"],
-    img: rightshub,
+    clip: rightshubClip,
+    poster: rightshubPoster,
     github: "https://github.com/hackforblacklivesmatter-5-1/rightshub",
     live: "https://rightshub.netlify.app/",
   },
@@ -159,7 +162,8 @@ export const projects = [
     name: "NYC Restroom Locator",
     info: "View and filter restrooms on a map, then save them to a list to visit later.",
     technologies: ["React", "Ruby on Rails", "PostgreSQL", "Heroku", "Bootstrap"],
-    img: restroomfinder,
+    clip: restroomfinderClip,
+    poster: restroomfinderPoster,
     github: "https://github.com/NinjaEagle/nyc-restroom-locator-frontend",
     githubBackEnd: "https://github.com/NinjaEagle/nyc-restroom-finder-backend",
     live: "https://ninjaeagle.github.io/nyc-restroom-locator-frontend",

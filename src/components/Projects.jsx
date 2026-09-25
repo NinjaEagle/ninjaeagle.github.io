@@ -1,19 +1,62 @@
+import { useEffect, useRef } from "react";
 import { projects } from "../data/site.js";
 import { IconExternal } from "./Icons.jsx";
 import { useInView } from "../hooks/useInView.js";
+import { useReducedMotion } from "../hooks/useReducedMotion.js";
 
-function ProjectCard({ project }) {
+function ProjectMedia({ project, reducedMotion }) {
+  const videoRef = useRef(null);
+
+  // Keep playback in sync when the motion preference changes mid-session.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (reducedMotion) {
+      video.pause();
+    } else {
+      video.play().catch(() => {});
+    }
+  }, [reducedMotion]);
+
+  if (project.clip) {
+    return (
+      <div className="project-media">
+        <video
+          ref={videoRef}
+          src={project.clip}
+          poster={project.poster}
+          aria-label={`${project.name} screen recording`}
+          preload="none"
+          muted
+          loop
+          playsInline
+          autoPlay={!reducedMotion}
+          controls={reducedMotion}
+        />
+      </div>
+    );
+  }
+
+  if (project.img) {
+    return (
+      <div className="project-media">
+        <img src={project.img} alt="" loading="lazy" decoding="async" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="project-media placeholder" aria-hidden="true">
+      <span>{project.name}</span>
+    </div>
+  );
+}
+
+function ProjectCard({ project, reducedMotion }) {
   return (
     <article className={project.featured ? "project-card featured" : "project-card"}>
-      {project.img ? (
-        <div className="project-media">
-          <img src={project.img} alt="" loading="lazy" decoding="async" />
-        </div>
-      ) : (
-        <div className="project-media placeholder" aria-hidden="true">
-          <span>{project.name}</span>
-        </div>
-      )}
+      <ProjectMedia project={project} reducedMotion={reducedMotion} />
       <div className="project-body">
         {project.status || project.featured ? (
           <p className="eyebrow">{project.status || "Featured"}</p>
@@ -54,6 +97,7 @@ function ProjectCard({ project }) {
 
 export default function Projects() {
   const { ref, visible } = useInView();
+  const reducedMotion = useReducedMotion();
 
   return (
     <section id="projects" className="section" ref={ref}>
@@ -62,7 +106,7 @@ export default function Projects() {
         <h2>Projects</h2>
         <div className="project-grid">
           {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
+            <ProjectCard key={project.name} project={project} reducedMotion={reducedMotion} />
           ))}
         </div>
       </div>
