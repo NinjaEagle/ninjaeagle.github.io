@@ -13,7 +13,7 @@ export default function About() {
         </figure>
         <div>
           <p className="eyebrow">About</p>
-          <h2>Shipping software and building PartyGem</h2>
+          <h2>{profile.aboutTitle}</h2>
           {profile.summary.map((paragraph) => (
             <p key={paragraph.slice(0, 24)}>{paragraph}</p>
           ))}

@@ -8,10 +8,7 @@ export default function Hero() {
         <p className="eyebrow">Portfolio</p>
         <h1>{profile.name}</h1>
         <p className="hero-role">{profile.role}</p>
-        <p className="hero-copy">
-          I write software full time and build web applications people can
-          use — including PartyGem, my event platform with RSVP and ticketing.
-        </p>
+        <p className="hero-copy">{profile.hero}</p>
         <div className="hero-actions">
           <a className="button button-primary" href="#projects">
             View projects <IconArrow />
