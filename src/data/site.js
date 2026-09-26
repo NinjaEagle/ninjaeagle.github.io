@@ -1,3 +1,4 @@
+import partygem from "../assets/partygem.webp";
 import hackernewsclone from "../assets/hackernewsclone.webp";
 import rightshubClip from "../assets/rightshub.mp4";
 import rightshubPoster from "../assets/rightshub-poster.webp";
@@ -138,6 +139,7 @@ export const projects = [
     status: "Startup in progress",
     info: "My startup: an event platform with RSVP flows and Stripe-powered ticketing. I’m focused on a reliable purchase path, tiered tickets, and clear organizer vs attendee UX on phone and desktop.",
     technologies: ["Go", "HTMX", "PostgreSQL", "Stripe", "Playwright"],
+    img: partygem,
     live: "https://partygemai.com",
     featured: true,
   },
