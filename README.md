@@ -1,6 +1,6 @@
 # Kevin Wang — portfolio
 
-Personal site for [kevwang.me](https://www.kevwang.me).
+Personal site published at [ninjaeagle.github.io](https://ninjaeagle.github.io).
 
 ## Local development
 
