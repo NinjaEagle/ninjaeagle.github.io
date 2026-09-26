@@ -1,13 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { skillCategories, skills } from "../data/site.js";
 import { useInView } from "../hooks/useInView.js";
+import { prefersReducedMotion } from "../hooks/useReducedMotion.js";
 
 const filters = ["All", ...skillCategories];
 const FADE_MS = 240;
-
-function prefersReducedMotion() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
 
 export default function Skills() {
   const { ref, visible } = useInView();
